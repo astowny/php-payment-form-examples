@@ -85,7 +85,7 @@ if (! class_exists('Api', false)) {
          * @param int $timestamp
          * @return string the generated trans_id
          */
-        public function generateTransId($timestamp = null)
+        public static function generateTransId($timestamp = null)
         {
             if (! $timestamp) {
                 $timestamp = time();
@@ -107,7 +107,7 @@ if (! class_exists('Api', false)) {
          * @param boolean $hashed set to false to get the unhashed signature
          * @return string
          */
-        public function sign($parameters, $key, $algo = 'ALGO_SHA256', $hashed = true)
+        public static function sign($parameters, $key, $algo = 'ALGO_SHA256', $hashed = true)
         {
             ksort($parameters);
 
@@ -157,7 +157,7 @@ if (! class_exists('Api', false)) {
             return $sane;
         }
 
-        public function fn_echo($param)
+        public static function fn_echo($param)
         {
             echo $param;
         }
